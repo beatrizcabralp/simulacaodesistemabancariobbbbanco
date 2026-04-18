@@ -22,7 +22,7 @@ public class Main {
         while(numeroDigitado < 1 || numeroDigitado > 7){
             System.out.println("Número inválido! Por favor, digite um número válido:");
 
-            System.out.println("\n******************************\n           Menu\n******************************\n\n");
+            System.out.println("\n*******************************\n           Menu\n******************************\n\n");
             System.out.println("1 - Criar Conta;");
             System.out.println("2 - Realizar Depósito;");
             System.out.println("3 - Realizar Saque;");
