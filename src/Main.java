@@ -29,11 +29,45 @@ public class Main {
             System.out.println("4 - Realizar transferências;");
             System.out.println("5 - Listar Contas;");
             System.out.println("6 - Calcular Total de Tributos;");
-            System.out.println("7 - Sair;");
+            System.out.println("7 - Sair.");
 
             numeroDigitado = scanner.nextInt();
         }
 
         System.out.println("O número digitado foi " + numeroDigitado);
+
+        if(numeroDigitado == 1){
+            System.out.println("Digite a opção de qual tipo de conta você deseja abrir\n");
+
+            System.out.println("1 - Conta corrente;");
+            System.out.println("2 - Conta poupança");
+
+            int criarTipodeConta = scanner.nextInt();
+
+            while(criarTipodeConta != 1 && criarTipodeConta != 2){
+
+                System.out.println("Número inválido! Por favor, digite um número válido:");
+
+                System.out.println("1 - Conta corrente;");
+                System.out.println("2 - Conta poupança");
+
+                criarTipodeConta = scanner.nextInt();
+            }
+
+            if(criarTipodeConta == 1){
+
+                System.out.println("Você selecionou a opção 1: Criar Conta Corrente.\n" + criarTipodeConta);
+
+                System.out.println("\nPor favor, digite seu nome: ");
+
+            }
+            else{
+
+                System.out.println("Você selecionou a opção 2: Criar Conta Poupança. " + criarTipodeConta);
+
+                System.out.println("\nPor favor, digite seu nome: ");
+            }
+
+        }
     }
 }
