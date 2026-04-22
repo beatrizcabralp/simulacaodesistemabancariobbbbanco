@@ -19,7 +19,7 @@ public class Main {
 
         int numeroDigitado = scanner.nextInt();
 
-        while(numeroDigitado < 1 || numeroDigitado > 7){
+        while(numeroDigitado < 1 || numeroDigitado > 8){
             System.out.println("Número inválido! Por favor, digite um número válido:");
 
             System.out.println("\n******************************\n           Menu\n******************************\n\n");
@@ -68,6 +68,37 @@ public class Main {
                 System.out.println("\nPor favor, digite seu nome: ");
             }
 
+        } else if(numeroDigitado == 2){
+            System.out.println("Você selecionou a opção realizar depósito.\nPor favor, digite a quantia que deseja depositar.");
+        } else if(numeroDigitado == 3){
+            System.out.println("Você selecionou a opção realizar saque.\nPor favor, digite a quantia que deseja sacar.");
+        } else if(numeroDigitado == 4){
+            System.out.println("Você selecionou a opção realizar transferência.\nPor favor, digite.");
+        } else if(numeroDigitado == 5){
+            System.out.println("Você selecionou a opção Listar Contas.\n Aqui estão às listas das contas");
+        } else if(numeroDigitado == 6){
+            System.out.println("Você selecionou a opção calcular total de tributos.\nAqui está o total de tributos");
+        } else if(numeroDigitado == 7){
+            System.out.println("Você selecionou a opção sair.\n Até breve!!! :)");
+        } else{
+            System.out.println("Número inválido! Por favor, digite novamente um número válido");
+
+            int numeroDigitadodois = scanner.nextInt();
+
+            while(numeroDigitadodois < 1 || numeroDigitadodois > 8){
+                System.out.println("Número inválido! Por favor, digite um número válido:");
+
+                System.out.println("\n******************************\n           Menu\n******************************\n\n");
+                System.out.println("1 - Criar Conta;");
+                System.out.println("2 - Realizar Depósito;");
+                System.out.println("3 - Realizar Saque;");
+                System.out.println("4 - Realizar transferências;");
+                System.out.println("5 - Listar Contas;");
+                System.out.println("6 - Calcular Total de Tributos;");
+                System.out.println("7 - Sair.");
+
+                numeroDigitadodois = scanner.nextInt();
+            }
         }
     }
 }
