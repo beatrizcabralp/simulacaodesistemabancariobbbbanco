@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Main {
 
+    static int proximoNumero = 101;
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -43,6 +45,7 @@ public class Main {
             System.out.println("2 - Conta poupança");
 
             int criarTipodeConta = scanner.nextInt();
+            scanner.nextLine();
 
             while(criarTipodeConta != 1 && criarTipodeConta != 2){
 
@@ -52,21 +55,36 @@ public class Main {
                 System.out.println("2 - Conta poupança");
 
                 criarTipodeConta = scanner.nextInt();
+                scanner.nextLine();
             }
+
+
+            System.out.println("\nPor favor, digite seu nome: ");
+            String nome = scanner.nextLine();
+
+            String tipodeConta;
 
             if(criarTipodeConta == 1){
 
                 System.out.println("Você selecionou a opção 1: Criar Conta Corrente.\n" + criarTipodeConta);
 
-                System.out.println("\nPor favor, digite seu nome: ");
+                tipodeConta = "Corrente";
 
             }
             else{
 
                 System.out.println("Você selecionou a opção 2: Criar Conta Poupança. " + criarTipodeConta);
 
-                System.out.println("\nPor favor, digite seu nome: ");
+                tipodeConta = "Poupança";
+
             }
+
+            System.out.println("Conta criada com sucesso!");
+            System.out.println("Número da conta: " + proximoNumero);
+            System.out.println("Tipo de conta:" + tipodeConta);
+            System.out.println("Cliente: " + nome);
+
+            proximoNumero++;
 
         } else if(numeroDigitado == 2){
             System.out.println("Você selecionou a opção realizar depósito.\nPor favor, digite a quantia que deseja depositar.");

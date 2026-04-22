@@ -1,9 +1,9 @@
-/*public abstract class Conta {
+public abstract class criarConta {
     protected int numero;
     protected String cliente;
     protected double saldo;
 
-    public Conta(int numero, String cliente) {
+    public criarConta(int numero, String cliente) {
         this.numero = numero;
         this.cliente = cliente;
         this.saldo = 0.0;
@@ -26,5 +26,5 @@
     }
 
     public abstract void sacar(double valor);
-    public abstract void transferir(Conta destino, double valor);
-}*/
+    public abstract void transferir(criarConta destino, double valor);
+}
