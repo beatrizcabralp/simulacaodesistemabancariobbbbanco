@@ -97,8 +97,8 @@ public class Main {
                 proximoNumero++;
 
             } else if(numeroDigitado == 2){
-                System.out.println("Você selecionou a opção realizar depósito.\nPor favor, digite a quantia que deseja depositar.");
-                System.out.print("Digite o número da conta: ");
+                System.out.println("Você selecionou a opção realizar depósito.\n");
+                System.out.print("Por favor, digite o número da conta: ");
 
                 int numeroConta = scanner.nextInt();
 
@@ -125,9 +125,9 @@ public class Main {
                 }
 
             } else if(numeroDigitado == 3){
-                System.out.println("Você selecionou a opção realizar saque.\nPor favor, digite a quantia que deseja sacar.");
+                System.out.println("Você selecionou a opção realizar saque.\n");
 
-                System.out.print("Digite o número da conta: ");
+                System.out.print("Por favor, digite o número da conta: ");
                 int numeroConta = scanner.nextInt();
 
                 criarConta contaEncontrada = null;
@@ -156,7 +156,42 @@ public class Main {
                     }
                 }
             } else if(numeroDigitado == 4){
-                System.out.println("Você selecionou a opção realizar transferência.\nPor favor, digite.");
+                System.out.println("Você selecionou a opção realizar transferência.\n");
+                System.out.print("Por favor, digite o número da conta de origem: ");
+                int origem = scanner.nextInt();
+
+                System.out.print("Digite o número da conta de destino: ");
+                int destino = scanner.nextInt();
+
+                criarConta contaOrigem = null;
+                criarConta contaDestino = null;
+
+                for(criarConta c : contas){
+                    if(c.getNumero() == origem){
+                        contaOrigem = c;
+                    }
+                    if(c.getNumero() == destino){
+                        contaDestino = c;
+                    }
+                }
+
+                if(contaOrigem == null || contaDestino == null){
+                    System.out.println("Conta de origem ou destino não encontrada!");
+                } else {
+
+                    System.out.print("Digite o valor da transferência: ");
+                    double valor = scanner.nextDouble();
+
+                    double saldoAntes = contaOrigem.getSaldo();
+
+                    contaOrigem.transferir(contaDestino, valor);
+
+                    if(contaOrigem.getSaldo() < saldoAntes){
+                        System.out.println("Transferência realizada com sucesso!");
+                        System.out.println("Saldo origem: " + contaOrigem.getSaldo());
+                        System.out.println("Saldo destino: " + contaDestino.getSaldo());
+                    }
+                }
             } else if(numeroDigitado == 5){
                 System.out.println("Você selecionou a opção Listar Contas.\n Aqui estão às listas das contas");
             } else if(numeroDigitado == 6){
