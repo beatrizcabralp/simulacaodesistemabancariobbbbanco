@@ -1,4 +1,5 @@
 public abstract class criarConta {
+
     protected int numero;
     protected String cliente;
     protected double saldo;
@@ -22,7 +23,7 @@ public abstract class criarConta {
     }
 
     public void depositar(double valor) {
-        saldo += valor;
+        this.saldo += valor;
     }
 
     public abstract void sacar(double valor);
