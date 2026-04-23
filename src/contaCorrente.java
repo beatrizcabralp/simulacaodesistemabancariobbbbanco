@@ -1,4 +1,4 @@
-public class contaCorrente extends criarConta {
+public class contaCorrente extends criarConta implements ITributavel {
 
     public contaCorrente(int numero, String cliente) {
         super(numero, cliente);
@@ -28,4 +28,11 @@ public class contaCorrente extends criarConta {
             System.out.println("Saldo insuficiente!");
         }
     }
+
+    @Override
+    public double calcularTributos() {
+        return saldo * 0.01;
+    }
+
+
 }

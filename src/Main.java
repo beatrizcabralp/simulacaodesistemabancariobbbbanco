@@ -193,7 +193,6 @@ public class Main {
                     }
                 }
             } else if(numeroDigitado == 5){
-                System.out.println("Você selecionou a opção Listar Contas.\n Aqui estão às listas das contas");
                 if(contas.isEmpty()){
                     System.out.println("Nenhuma conta cadastrada.");
                 } else {
@@ -219,6 +218,21 @@ public class Main {
                 }
             } else if(numeroDigitado == 6){
                 System.out.println("Você selecionou a opção calcular total de tributos.\nAqui está o total de tributos");
+                double totalTributos = 0.0;
+
+                for(criarConta c : contas){
+
+                    if(c instanceof ITributavel){
+
+                        ITributavel contaTributavel = (ITributavel) c;
+
+                        totalTributos += contaTributavel.calcularTributos();
+                    }
+                }
+
+                System.out.println("\n========================================");
+                System.out.println("Total de tributos a recolher: R$ " + totalTributos);
+                System.out.println("========================================");
             } else if(numeroDigitado == 7){
                 System.out.println("Você selecionou a opção sair.\n Até breve!!! :)");
                 executando = false;
