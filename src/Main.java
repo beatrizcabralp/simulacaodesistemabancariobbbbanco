@@ -194,6 +194,29 @@ public class Main {
                 }
             } else if(numeroDigitado == 5){
                 System.out.println("Você selecionou a opção Listar Contas.\n Aqui estão às listas das contas");
+                if(contas.isEmpty()){
+                    System.out.println("Nenhuma conta cadastrada.");
+                } else {
+
+                    System.out.println("\n===== LISTA DE CONTAS =====");
+
+                    for(criarConta c : contas){
+
+                        String tipo;
+
+                        if(c instanceof contaCorrente){
+                            tipo = "Corrente";
+                        } else {
+                            tipo = "Poupança";
+                        }
+
+                        System.out.println("----------------------------");
+                        System.out.println("Número: " + c.getNumero());
+                        System.out.println("Cliente: " + c.getCliente());
+                        System.out.println("Saldo: " + c.getSaldo());
+                        System.out.println("Tipo: " + tipo);
+                    }
+                }
             } else if(numeroDigitado == 6){
                 System.out.println("Você selecionou a opção calcular total de tributos.\nAqui está o total de tributos");
             } else if(numeroDigitado == 7){
